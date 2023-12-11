@@ -1,6 +1,6 @@
 import os
 
-from views import app
+from controls import app
 
 port = int(os.getenv("PORT", 5000))
 

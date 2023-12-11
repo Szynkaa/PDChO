@@ -5,7 +5,7 @@ import dotenv
 from neo4j import GraphDatabase
 from neo4j.graph import Node
 
-dotenv.load_dotenv("Neo4j-54eecc8b-Created-2023-12-10.txt")
+dotenv.load_dotenv("env.txt")
 
 driver = GraphDatabase.driver(
     os.getenv("NEO4J_URI"),
@@ -41,7 +41,7 @@ class Dish:
 
         records, summary, keys = driver.execute_query(
             """
-            MATCH (dish:Dish {name: $name})-[:CONTAINS]->(sub:Ingredient)
+            MATCH (dish:Dish {name: $name})-[:CONTAINS*]->(sub:Ingredient)
             RETURN sub
             """,
             name=self.name
@@ -98,7 +98,7 @@ class Ingredient:
     def get_dishes(self):
         records, summary, keys = driver.execute_query(
             """
-            MATCH (d:Dish)-[:CONTAINS]->(i:Ingredient {name: $name})
+            MATCH (d:Dish)-[:CONTAINS*]->(i:Ingredient {name: $name})
             RETURN d, [(d)-[:IS]->(t:DishType) | t.type] AS types
             """,
             name=self.name
