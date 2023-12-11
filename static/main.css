@@ -1,0 +1,86 @@
+body {
+    color: whitesmoke;
+    background-color: #242424;
+    font-family: Verdana, sans-serif;
+    font-size: 0.9em;
+}
+
+body>header {
+    font-family: Georgia, serif;
+    font-size: 3em;
+    padding: 0.3em;
+    text-align: center;
+}
+
+nav {
+    margin-top: 2em;
+    width: 15%;
+    float: left;
+    line-height: 1.5em;
+}
+
+a {
+    display: block;
+    color: whitesmoke;
+}
+
+a:hover {
+    color: rgb(166, 166, 166);
+}
+
+section {
+    float: left;
+}
+
+section>header {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0.3em;
+}
+
+section#SPA {
+    margin: 0px 10px;
+    display: block;
+    overflow: auto;
+    width: 65%;
+}
+
+div.controls {
+    margin-top: 2em;
+    float: left;
+    width: 15%;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    background-color: #7e7e7e;
+}
+
+div.controls>* {
+    display: block;
+    text-align: right;
+    margin: 4px 0;
+    margin-left: auto;
+}
+
+form {
+    margin: 2em;
+}
+
+div#response {
+    margin: 2em;
+}
+
+div#saving,
+select#loadedSaves {
+    display: none;
+}
+
+table {
+    margin: 2em;
+}
+
+input {
+    margin-bottom: 1em;
+}

@@ -1,0 +1,17 @@
+<form onsubmit="save(this)" action="javascript:">
+    <label for="dish">Nazwa dania</label><br>
+    <input type="text" name="dish"><br>
+
+    <label for="dish">Typ dania</label><br>
+    <input type="text" name="type"><br>
+
+    <label for="ingredient">Składniki</label><br>
+    <input type="text" name="ingredient"><br>
+    <input type="button" value="więcej składników" onclick="more_fields(this)"><br>
+
+    <label for="subdish">Dania składowe</label><br>
+    <input type="text" name="subdish"><br>
+    <input type="button" value="więcej dań składowych" onclick="more_fields(this)"><br>
+
+    <input type="submit" value="dodaj">
+</form>
