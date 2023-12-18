@@ -155,16 +155,17 @@ async function save(event) {
                 dish.type = element.value
             if (element.name === "ingredient")
                 dish.ingredients.push(element.value)
-            if (element.name === "subdishes")
+            if (element.name === "subdish")
                 dish.subdishes.push(element.value)
         }
     }
 
-    if (dish.name === undefined)
+    if (dish.name === undefined) {
         alert("Nazwa dania jest wymagana")
-    return
+        return
+    }
 
-    await fetch("/api/dishes", {
+    await fetch(window.location.href +"api/dishes", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ def get_dish_contains(name):
     return jsonify(dish.get_contains())
 
 
-@app.route("/api/dishes/", methods=["POST"])
+@app.route("/api/dishes", methods=["POST"])
 def add_dish():
     data: dict = json.loads(request.data)
     connection = models.Connection(data.get("name"), data.get("type", None))
